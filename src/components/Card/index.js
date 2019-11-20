@@ -6,12 +6,16 @@ import {CardContainer,
   Number,
   InfoContainer,
   Divider,
-  SectionContainer} from './styled';
+  SectionContainer,
+  Image,
+  ImageContainer} from './styled';
 import Chip from '../../assets/chip.png';
-// import Visa from '../../assets/visa.png';
+import Visa from '../../assets/visa.png';
 import Master from '../../assets/masterCard.png';
+import Amex from '../../assets/amex.png';
+
 import {ActiveBorder} from '../CardViewer/styled';
-import {validateCreditCard} from './helpers';
+import {getBrand} from '../CardViewer/helpers';
 
 
 // MasterCard 100 x 80
@@ -50,13 +54,24 @@ const getCordenates = (activeLabel, Refs) => {
 const Card = ({values, cordenates}) => {
   const Refs = getRefs(useRef);
   // const [activeBox, setActiveBox] = useState([0, 0, 0, 0]);
+  const activeBrand = getBrand(values.Number);
   return (<CardContainer>
-    <ActiveBorder cordenates={getCordenates(cordenates, Refs)}
-      validation={validateCreditCard(values.Number)} />
+    <ActiveBorder cordenates={getCordenates(cordenates, Refs)} />
     <BrandsContainer>
-      <img src={Chip} style={{width: '50px', height: '50px'}} />
-      <img src={Master} style={{width: '100px', height: '80px'}} />
+      <img src={Chip} alt="Chip" style={{width: '50px', height: '50px'}} />
+      {/* <img src={getBrand(values.Number)}
+        alt="Brand"
+        style={{width: '100px', height: '50px'}} /> */}
       {/* <img src={Visa} style={{width: '100px', height: '50px'}} /> */}
+      <ImageContainer display={activeBrand === 'Visa' ? 'flex' : 'none'}>
+        <Image width={100} height={50} src={Visa} />
+      </ImageContainer>
+      <ImageContainer display={activeBrand === 'Master' ? 'flex' : 'none'}>
+        <Image width={100} height={80} src={Master} />
+      </ImageContainer>
+      <ImageContainer display={activeBrand === 'Amex' ? 'flex' : 'none'}>
+        <Image width={100} height={100} src={Amex} />
+      </ImageContainer>
     </BrandsContainer>
     <SectionContainer width={90} ref={Refs['Number']}>
       <Numbers>

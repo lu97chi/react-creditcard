@@ -1,7 +1,8 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import Master from '../../assets/masterCard.png';
+
 import {Band, CardContainer, CCVContainer, CCV} from './styled';
+import {getBrand} from '../CardViewer/helpers';
 
 const CardBack = ({values}) => <CardContainer>
   <Band />
@@ -10,7 +11,9 @@ const CardBack = ({values}) => <CardContainer>
     <CCV>
       <span style={{paddingRight: '12px'}}>{values.CVV || ''}</span>
     </CCV>
-    <img src={Master} style={{width: '80px', height: '60px'}} />
+    {console.log(values)}
+    <img alt="Brand" src={getBrand(values.Number)}
+      style={{width: '80px', height: '60px'}} />
   </CCVContainer>
 </CardContainer>
 ;

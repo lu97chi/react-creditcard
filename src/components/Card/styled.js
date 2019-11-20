@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 export const CardContainer = styled.div`
     width: 400px;
@@ -59,4 +59,34 @@ export const DivContainer = styled.div`
     display: flex;
     align-items: center; 
     width: ${({width}) => width}%;
+`;
+
+const fadeIn = keyframes`
+    from {
+    transform: translate3d(0, -5%, 0);
+    visibility: visible;
+    }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+export const ImageContainer = styled.div`
+    width: 100px;
+    height: 80px;
+    z-index: 2;
+    display: ${({display}) => display};
+    transition: .1s ease all;
+    animation: ${fadeIn} 1s ease forwards;
+    padding: 0px 18px;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(${({background}) => background}); */
+`;
+
+export const Image = styled.img`
+    width: ${({width}) => width}px;
+    height: ${({height}) => height}px;
+    margin: auto;
 `;

@@ -13,7 +13,7 @@ padding-top: 2%;
 export const ActiveBorder = styled.div`
     position: absolute;
     transition: .3s ease all;
-    border: 1px solid ${({validation}) => validation ? '#ffffff' : 'red'};
+    border: 1px solid #ffffff;
     border-radius: 8px;
     top: ${({cordenates}) => `${cordenates[0]}px`};
     left: ${({cordenates}) => `${cordenates[1]}px`};

@@ -23,8 +23,7 @@ export const validateCreditCard = (number) => {
       validation.push(parseInt(number[i]));
     }
   }
-
   validation.forEach((number) => payload += parseInt(number));
-  if (payload % 10 == 0) return true;
+  if (payload % 10 === 0 && validation.length >= 16) return true;
   return false;
 };
