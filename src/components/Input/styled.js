@@ -80,6 +80,7 @@ export const CustomInputValue = styled.div`
     background: transparent;
     transition: .3s ease all;
     height: 40px;
+    border: 1px solid transparent;
 `;
 
 export const CustomSpan = styled.span`

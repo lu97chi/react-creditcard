@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
     margin: 0 auto;
     padding: 18px;
     border-radius: 12px;
-    background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -23,17 +23,20 @@ export const BrandsContainer = styled.div`
     align-items: center;
 `;
 
-export const NumbersContainer = styled.div`
-    border: 1px solid #ffffff;
+export const SectionContainer = styled.div`
+    border: 1px solid transparent;
     padding: 12px;
-    width: 90%;
+    width: ${({width}) => width}%;
     border-radius: 12px;
+    font-size: 14px;
+    color: #ffffff;
 `;
 
 export const InfoContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    margin-top: 12px;
+    justify-content: space-around;
+    margin-top: 0px;
+    align-items: center;
 `;
 
 export const Numbers = styled.div`
@@ -41,5 +44,19 @@ export const Numbers = styled.div`
 `;
 
 export const Number = styled.span`
-    margin-right: ${({endBlock}) => endBlock ? '36px' : '8px'}
+    margin-right: ${({endBlock}) => endBlock ? '36px' : '8px'};
+    width: 100px;
+`;
+
+export const Divider = styled.div`
+    font-size: 14px;
+    color: #ffffff;
+    padding-top: -6px;
+    width: 0.5%;
+`;
+
+export const DivContainer = styled.div`
+    display: flex;
+    align-items: center; 
+    width: ${({width}) => width}%;
 `;

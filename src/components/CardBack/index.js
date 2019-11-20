@@ -6,7 +6,6 @@ import {Band, CardContainer, CCVContainer, CCV} from './styled';
 const CardBack = ({values}) => <CardContainer>
   <Band />
   <CCVContainer>
-    {console.log(values)}
     <span style={{paddingRight: '12px'}}>ccv</span>
     <CCV>
       <span style={{paddingRight: '12px'}}>{values.CVV || ''}</span>

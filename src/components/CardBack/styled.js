@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
     height: 200px;
     margin: 0 auto;
     border-radius: 12px;
-    background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
